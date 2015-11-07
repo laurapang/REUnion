@@ -8,7 +8,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-<link rel = "stylesheet" type  = "text/css" href = "yhack.css">
+<link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='yhack.css') }}">
+<!-- <link rel = "stylesheet" type  = "text/css" href = "yhack.css"> -->
 </head>
     <header>
         <div class="container-fluid adon">
@@ -22,7 +23,7 @@
     </header>
 <body>
 
-<div id = "login_fb"><img src="facebook.jpg" alt="facebook icon" id = "fbicon"> Login with facebook</div>
+<div id = "login_fb"><img src="static/facebook.jpg" alt="facebook icon" id = "fbicon"> Login with facebook</div>
 <div class = "container">
 <form class="form-horizontal">
   <div class="form-group">
@@ -41,7 +42,7 @@
     <div style = "text-align: center">
       <button type="button" class="btn btn-default" id = "signin">Sign in</button>
       <script> $("#signin").click(function(){
-      	window.location.href='profile.html';
+      	window.location.href='profile';
       });</script>
     </div>
   </div>

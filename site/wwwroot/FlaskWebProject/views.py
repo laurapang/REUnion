@@ -11,10 +11,23 @@ from FlaskWebProject import app
 def home():
     """Renders the home page."""
     return render_template(
-        'index.html',
+        'index2.html',
         title='Home Page',
-        year=datetime.now().year,
+        year=datetime.now().year
     )
+
+@app.route('/profile')
+def profile():
+    """Renders the profile page."""
+    return render_template(
+        'profile.html',        
+        title='Profile',
+        year=datetime.now().year,
+#        title='P',
+#        year=datetime.now().year,
+#        message='Your contact page.'
+    )
+
 
 @app.route('/contact')
 def contact():
