@@ -23,6 +23,7 @@ def profile():
         'profile.html',        
         title='Profile',
         year=datetime.now().year,
+        message = 'Thinking that it is relatively ok here haha'
 #        title='P',
 #        year=datetime.now().year,
 #        message='Your contact page.'
