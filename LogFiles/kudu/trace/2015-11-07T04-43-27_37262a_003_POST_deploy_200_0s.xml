@@ -1,0 +1,4 @@
+<step title="Incoming Request" date="2015-11-07T04:43:27.988" instance="37262a" url="/deploy?scmType=GitHub" method="POST" type="request" pid="1296,2,9" Connection="Keep-Alive" Content-Length="8603" Content-Type="application/x-www-form-urlencoded" Accept="*/*" Host="tldrtldr.scm.azurewebsites.net" User-Agent="GitHub-Hookshot/3e20b33" X-GitHub-Event="ping" X-GitHub-Delivery="14cfd480-850a-11e5-89fa-70dcbf824787" X-SITE-DEPLOYMENT-ID="tldrtldr" >
+  <step title="FetchHandler" date="2015-11-07T04:43:28.128" /><!-- duration: 187ms -->
+  <step title="Outgoing response" date="2015-11-07T04:43:28.316" type="response" statusCode="200" statusText="OK" Server="Microsoft-IIS/8.0" Cache-Control="private" X-AspNet-Version="4.0.30319" /><!-- duration: 0ms -->
+</step><!-- duration: 344ms -->

@@ -1,0 +1,15 @@
+<step title="Incoming Request" date="2015-11-07T04:43:38.706" instance="37262a" url="/deploy?scmType=GitHub" method="POST" type="request" pid="7676,2,8" Connection="Keep-Alive" Content-Length="80" Expect="100-continue" Host="tldrtldr.scm.azurewebsites.net" User-Agent="Azure-WebSites-Controller/48.1.8598.1511" x-ms-request-id="9197a9c3-c15f-4a2f-b38a-af0021aa9766" X-SITE-DEPLOYMENT-ID="tldrtldr" >
+  <step title="FetchHandler" date="2015-11-07T04:43:38.721" >
+    <step title="Attempting to fetch target branch master" date="2015-11-07T04:43:38.800" /><!-- duration: 0ms -->
+    <step title="Performing fetch based deployment" date="2015-11-07T04:43:38.831" >
+      <step title="Creating temporary deployment" date="2015-11-07T04:43:38.846" /><!-- duration: 78ms -->
+      <step title="LibGit2SharpRepository Initialize" date="2015-11-07T04:43:39.034" >
+        <step title="Configure git server" date="2015-11-07T04:43:39.471" /><!-- duration: 31ms -->
+        <step title="Create deny users for .git folder" date="2015-11-07T04:43:39.518" /><!-- duration: 16ms -->
+        <step title="Configure git-credential" date="2015-11-07T04:43:39.534" /><!-- duration: 31ms -->
+        <step title="Setup post receive hook" date="2015-11-07T04:43:39.565" /><!-- duration: 16ms -->
+      </step><!-- duration: 547ms -->
+    </step><!-- duration: 1531ms -->
+  </step><!-- duration: 1656ms -->
+  <step title="Outgoing response" date="2015-11-07T04:43:40.378" type="response" statusCode="200" statusText="OK" Server="Microsoft-IIS/8.0" Cache-Control="private" X-AspNet-Version="4.0.30319" /><!-- duration: 0ms -->
+</step><!-- duration: 1672ms -->

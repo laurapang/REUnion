@@ -1,0 +1,3 @@
+<step title="Incoming Request" date="2015-11-07T04:43:29.488" instance="37262a" url="/api/settings/ScmType" method="GET" type="request" pid="1296,2,7" Connection="Keep-Alive" Host="tldrtldr.scm.azurewebsites.net" User-Agent="Azure-WebSites-Controller/48.1.8598.1511" x-ms-request-id="9197a9c3-c15f-4a2f-b38a-af0021aa9766" X-SITE-DEPLOYMENT-ID="tldrtldr" >
+  <step title="Outgoing response" date="2015-11-07T04:43:29.533" type="response" statusCode="200" statusText="OK" Server="Microsoft-IIS/8.0" x-ms-request-id="9197a9c3-c15f-4a2f-b38a-af0021aa9766" Cache-Control="private" X-AspNet-Version="4.0.30319" Content-Type="application/json; charset=utf-8" /><!-- duration: 16ms -->
+</step><!-- duration: 60ms -->

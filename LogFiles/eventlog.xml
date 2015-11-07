@@ -1,0 +1,45 @@
+<Events><Event><System><Provider Name="ASP.NET 4.0.30319.0"/><EventID>1325</EventID><Level>3</Level><Task>0</Task><Keywords>Keywords</Keywords><TimeCreated SystemTime="2015-11-07T04:30:13Z"/><EventRecordID>165967140</EventRecordID><Channel>Application</Channel><Computer>RD000D3AC00261</Computer><Security/></System><EventData><Data>An unhandled exception occurred and the process was terminated.
+
+Application ID: /LM/W3SVC/158399782/ROOT
+
+Process ID: 6560
+
+Exception: System.Configuration.ConfigurationErrorsException
+
+Message: Couldn't find type for class Microsoft.WindowsAzure.Diagnostics.DiagnosticMonitorTraceListener, Microsoft.WindowsAzure.Diagnostics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35.
+
+StackTrace:    at System.Diagnostics.TraceUtils.GetRuntimeObject(String className, Type baseType, String initializeData)
+   at System.Diagnostics.TypedElement.BaseGetRuntimeObject()
+   at System.Diagnostics.ListenerElement.GetRuntimeObject()
+   at System.Diagnostics.ListenerElementsCollection.GetRuntimeObject()
+   at System.Diagnostics.TraceInternal.get_Listeners()
+   at System.Diagnostics.TraceInternal.WriteLine(String message)
+   at System.Diagnostics.Debug.WriteLine(String message)
+   at Microsoft.Web.Compilation.Snapshots.SnapshotHelper.TakeSnapshotTimerCallback(Object stateInfo)
+   at System.Threading.TimerQueueTimer.CallCallbackInContext(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.TimerQueueTimer.CallCallback()
+   at System.Threading.TimerQueueTimer.Fire()
+   at System.Threading.TimerQueue.FireNextTimers()
+   at System.Threading.TimerQueue.AppDomainTimerCallback()</Data></EventData></Event><Event><System><Provider Name=".NET Runtime"/><EventID>1026</EventID><Level>0</Level><Task>0</Task><Keywords>Keywords</Keywords><TimeCreated SystemTime="2015-11-07T04:30:13Z"/><EventRecordID>165967156</EventRecordID><Channel>Application</Channel><Computer>RD000D3AC00261</Computer><Security/></System><EventData><Data>Application: w3wp.exe
+Framework Version: v4.0.30319
+Description: The process was terminated due to an unhandled exception.
+Exception Info: System.Configuration.ConfigurationErrorsException
+Stack:
+   at System.Diagnostics.TraceUtils.GetRuntimeObject(System.String, System.Type, System.String)
+   at System.Diagnostics.TypedElement.BaseGetRuntimeObject()
+   at System.Diagnostics.ListenerElement.GetRuntimeObject()
+   at System.Diagnostics.ListenerElementsCollection.GetRuntimeObject()
+   at System.Diagnostics.TraceInternal.get_Listeners()
+   at System.Diagnostics.TraceInternal.WriteLine(System.String)
+   at System.Diagnostics.Debug.WriteLine(System.String)
+   at Microsoft.Web.Compilation.Snapshots.SnapshotHelper.TakeSnapshotTimerCallback(System.Object)
+   at System.Threading.TimerQueueTimer.CallCallbackInContext(System.Object)
+   at System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)
+   at System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)
+   at System.Threading.TimerQueueTimer.CallCallback()
+   at System.Threading.TimerQueueTimer.Fire()
+   at System.Threading.TimerQueue.FireNextTimers()
+   at System.Threading.TimerQueue.AppDomainTimerCallback()
+</Data></EventData></Event></Events>
