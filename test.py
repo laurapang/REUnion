@@ -61,7 +61,7 @@ def get_user_data(user):
 
 
 # Create graph API object
-FB_ACCESS_TOKEN = "CAACEdEose0cBALvzckSbHOUO5LlBsJOyySZB9cwYF3YoxRfyg1zEZBlquz2zv0KZBRfnVSKvuLEM0aAqZCtjZCVuDRbUSFywl5wDymMxmNTvDJZAyX6HNZBtwtm1LlGAmpK2ZCjdiyXGy5iMUd0M0NKXIxtC8VKCZBaJn0GurzzLJfsjZBDy9IgzdD1G5YdoPSDUUSHWRcnTotupsgdEPba2rq"
+FB_ACCESS_TOKEN = "CAACEdEose0cBAELBDPWnmPXWu9Ioh6BAfJcv2ggWPgMtJZAeIZCXXdOnBhSWc6gxiw4nf9GBEZArYpaqvWV9oen6uZAz29ZCDkTWudzcggrAqI1Q1Vybh8ydti5V4GklGSTslVva6T0fEIdnhGMJLUUgo5UMsURNgvQysNgUAxCtr9dmEFezoZBE8xq7d8unghzBZAiGqLLF82jTWLoWkuC"
 graph = facebook.GraphAPI(FB_ACCESS_TOKEN)
 
 # Get your data
@@ -95,14 +95,14 @@ info = '\n'.join(get_recursively(info, "name"))
 data = {'entity_type': 'pii', 'text': info}
 info_entities = post_requests('extractentities', data=data)
 for entity in info_entities['entities']:
-    print entity
+    print "user ent: "+entity
     print
 
 # Get user post and entities
 data = {'entity_type': 'pii', 'text': posts}
 post_entities = post_requests('extractentities', data=data)
 for entity in post_entities['entities']:
-    print entity
+    print entity['original_text']
     print
 
 # Print picture and text
@@ -120,7 +120,8 @@ for index, picture in enumerate(pictures):
     data = {'entity_type': 'pii', 'text': text}
     entities = post_requests('extractentities', data=data)
     for entity in entities['entities']:
-        print entity
+        print entity['type']
+        print entity['original_text']
     print
     if (index >= MAX_PICS):
         break

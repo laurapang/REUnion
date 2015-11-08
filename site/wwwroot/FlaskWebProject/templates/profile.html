@@ -80,10 +80,10 @@
             <div class="intro-text">
               <div class="row">
                 <div class="col-md-2">
-                    <img src="static/amc.jpg"  alt="profile icon" id = "p-icon">
+                    <img src="static/akash.jpg"  alt="profile icon" id = "p-icon">
                 </div>
                 <div class="col-md-10" id = "quote">
-                    <div id = "quotetxt">"LOL what is life"</div>
+                    <div id = "quotetxt">"Social Profiling"</div>
                 </div>
               </div>
             </div>
@@ -91,12 +91,58 @@
 <div class="row" style = "margin-top: 40px">
   <div class="col-md-4">
     <div id="piechart" style="width: 500px; height: 300px;"></div>
+    <div id = "sentiment" style = "text-align: center"></div>
   </div>
   <div class="col-md-8">
-    <table class="table table-hover" style = "width: 600px">
-      {{message|safe}}
+    <table class="table table-hover" id = "result" style = "width: 600px">
+      <center>Loading...</center>
     </table>
   </div>
 </div>
+<div style = "font-size: 20px"> Security Cautions </div>
+  <table id = "entity" class="table table-hover" style = "margin-left:20px"></table>
+<div style = 'font-size: 20px'> Image Text Recognition </div>
+  <table id = "pic" class = "table table-hover" style = "margin-left: 20px" >
+<!--   <tr><td>
+  <img src = 'https://scontent.xx.fbcdn.net/hphotos-xaf1/t31.0-8/12186245_10204049812440683_2239440611552949480_o.jpg' class = 'imgclass'>
+  </td><td>fdsafds</td></tr> -->
+  </table>
+  <script>
+  console.log("going to run");
+  $.ajax({
+  url:"/getposts",
+  type: 'GET',
+  success: function(data) {
+        $("#result").html(data);
+    }
+});
+
+    $.ajax({
+  url:"/getsent",
+  type: 'GET',
+  success: function(data) {
+        $("#sentiment").html(data);
+        console.log('Load was performed.');
+    }});
+
+    $.ajax({
+  url:"/entity",
+  type: 'GET',
+  success: function(data) {
+        $("#entity").html(data);
+        console.log('User Entity load was performed.');
+    }});
+
+  $.ajax({
+  url:"/pic",
+  type: 'GET',
+  success: function(data) {
+        $("#pic").html(data);
+        console.log('Pic load was performed.');
+    }});
+
+
+  </script>
+
 </body>
 </html>
