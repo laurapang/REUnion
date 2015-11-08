@@ -6,6 +6,9 @@ import HTMLParser
 # For removing escape characters
 htmlparser = HTMLParser.HTMLParser()
 
+# Maximum number of pictures to parse
+MAX_PICS = 10
+
 # Takes a dict with nested dicts and searches for all values of key
 def get_recursively(search_dict, field):
     fields_found = []
@@ -88,7 +91,6 @@ print "Score: %s" % results['aggregate']['score']
 print
 
 # Get user info and entities
-print info
 info = '\n'.join(get_recursively(info, "name"))
 data = {'entity_type': 'pii', 'text': info}
 info_entities = post_requests('extractentities', data=data)
@@ -97,44 +99,49 @@ for entity in info_entities['entities']:
     print
 
 # Get user post and entities
-print posts
 data = {'entity_type': 'pii', 'text': posts}
 post_entities = post_requests('extractentities', data=data)
 for entity in post_entities['entities']:
     print entity
     print
-    
+
 # Print picture and text
-for picture in pictures:
+for index, picture in enumerate(pictures):
     print "Getting text from image..."
     print picture
     try:
         text = post_requests('ocrdocument', data={'url': picture})
         text = text["text_block"][0]["text"]
         text = " ".join(htmlparser.unescape(text).replace("\n", " ").split())
-        print text
     except KeyError:
         pass
     
     print "Getting entities from text..."
-    entities = post_requests('extractentities', data = {'entity_type': 'pii', 'text': text})
+    data = {'entity_type': 'pii', 'text': text}
+    entities = post_requests('extractentities', data=data)
     for entity in entities['entities']:
         print entity
     print
-    
+    if (index >= MAX_PICS):
+        break
+
+
+'''
+# Import libraries for summarizer
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lsa import LsaSummarizer as Summarizer
-from sumy.nlp.stemmers import *
+from sumy.nlp.stemmers import Stemmer
+from sumy.utils import get_stop_words
 
+# Set up summarizer
 LANGUAGE = "english"
-
 parser = PlaintextParser.from_string(posts, Tokenizer(LANGUAGE))
- 
 stemmer = Stemmer(LANGUAGE)
-
 summarizer = Summarizer(stemmer)
 summarizer.stop_words = get_stop_words(LANGUAGE)
 
-for sentence in summarizer(parser.document, 10):
+# Print summary
+for sentence in summarizer(parser.document, 5):
     print(sentence)
+'''
